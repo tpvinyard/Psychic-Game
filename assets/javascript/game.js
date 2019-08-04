@@ -4,7 +4,7 @@ const gameCode = {
     wins: 0,
     livesLeft: 15,
     currentWord: '',
-    secretWordPublic: [],
+    secretWordPublic: '',
     lettersGuessedWrong: [],
     facts: [],
 
@@ -14,7 +14,9 @@ const gameCode = {
 
     getWordToGuess: function() {
         this.currentWord = wordsToGuessFrom[this.getRandomNumber(wordsToGuessFrom.length)];
- //       this.secretWordPublic.push()
+        for (let i = 0; i < this.currentWord.length; i++) {
+            this.secretWordPublic += '-';
+        }
     },
 
     guessLetter: function(char) {
@@ -27,7 +29,8 @@ const gameCode = {
 
 }
 
-gameCode.getWordToGuess();
-console.log(gameCode.currentWord);
-console.log(gameCode.guessLetter('s'));
-console.log(gameCode.lettersGuessedWrong);
+    gameCode.getWordToGuess();
+    console.log(gameCode.currentWord);
+    console.log(gameCode.guessLetter('s'));
+    console.log(gameCode.lettersGuessedWrong);
+    console.log(gameCode.secretWordPublic);
