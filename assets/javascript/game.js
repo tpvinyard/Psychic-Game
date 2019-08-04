@@ -24,13 +24,34 @@ const gameCode = {
             return true;
         } else {
             this.lettersGuessedWrong.push(char);
+            this.livesLeft--;
         }
-    }
+    },
 
+    updateDOM: function ()  {
+        const winsDOM = document.querySelector('#wins');
+        const livesLeftDOM = document.querySelector('#guessesRemaining');
+        const secretWordPublicDOM = document.querySelector('#secretWord');
+        const lettersGuessedWrongDOM = document.querySelector('#alreadyGuessedLetters');
+
+        console.log(this.wins);
+        winsDOM.textContent = this.wins;
+        livesLeftDOM.textContent = this.livesLeft;
+        secretWordPublicDOM.textContent = this.secretWordPublic;
+        lettersGuessedWrongDOM.textContent = this.lettersGuessedWrong.join('');
+    }
 }
 
-    gameCode.getWordToGuess();
-    console.log(gameCode.currentWord);
-    console.log(gameCode.guessLetter('s'));
-    console.log(gameCode.lettersGuessedWrong);
-    console.log(gameCode.secretWordPublic);
+document.onkeyup = function(e) {
+    const userSelection = e.key.toLowerCase();
+    
+}
+
+// Debugging to the console
+gameCode.getWordToGuess();
+console.log(gameCode.currentWord);
+console.log(gameCode.guessLetter('s'));
+console.log(gameCode.lettersGuessedWrong);
+console.log(gameCode.secretWordPublic);
+console.log(gameCode.livesLeft);
+gameCode.updateDOM();

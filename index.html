@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-  <script src="assets/javascript/game.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -32,13 +32,13 @@
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <h3>Press any key to get started!</h3>
                 <h3>Wins</h3>
-                <h3 id="wins"></h3>
+                <div><span id="wins"></span></div>
                 <h3>Current Word</h3>
-                <h3 id="currentWord"></h3>
+                <div><span id="secretWord"></span></div>
                 <h3>Number of guesses remaining</h3>
-                <h3 id="guessesRemaining"></h3>
+                <div><span id="guessesRemaining"></span></div>
                 <h3>Letters already guessed</h3>
-                <h3 id="alreadyGuessedLetters"></h3>
+                <div><span id="alreadyGuessedLetters"></span></div>
             </div>
         </div>
     </div>
@@ -48,4 +48,7 @@
             <span class="text-white">Try not. Do... or do not. There is no try.</span>
         </div>
     </footer>
+
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
