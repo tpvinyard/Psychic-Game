@@ -21,13 +21,9 @@ const gameCode = {
 
     guessLetter: function(char) {
         if (this.currentWord[0].includes(char.toLowerCase())) {
-            console.log('inside guessLetter');
             for (let i = 0; i < this.currentWord[0].length; i++) {
-                console.log(i);
                 if (this.currentWord[0][i]==char) {
-                    console.log(this.currentWord[0][i]);
-                    char = this.secretWordPublic.indexOf[i];
-                    console.log(this.secretWordPublic);
+                    this.secretWordPublic[i] = char;
                 }
             }
         } else {
@@ -42,7 +38,6 @@ const gameCode = {
         const secretWordPublicDOM = document.querySelector('#secretWord');
         const lettersGuessedWrongDOM = document.querySelector('#alreadyGuessedLetters');
 
-        console.log(this.wins);
         winsDOM.textContent = this.wins;
         livesLeftDOM.textContent = this.livesLeft;
         secretWordPublicDOM.textContent = this.secretWordPublic.join('');
@@ -50,16 +45,19 @@ const gameCode = {
     }
 }
 
+gameCode.getWordToGuess();
+
 document.onkeyup = function(e) {
     const userSelection = e.key.toLowerCase();
-
+    gameCode.guessLetter(userSelection);
+    gameCode.updateDOM();
 }
 
 // Debugging to the console
-gameCode.getWordToGuess();
-console.log(gameCode.currentWord);
-console.log(gameCode.guessLetter('s'));
-console.log(gameCode.lettersGuessedWrong);
-console.log(gameCode.secretWordPublic.join(''));
-console.log(gameCode.livesLeft);
-gameCode.updateDOM();
+// gameCode.getWordToGuess();
+// console.log(gameCode.currentWord);
+// console.log(gameCode.guessLetter('c'));
+// console.log(gameCode.lettersGuessedWrong);
+// console.log(gameCode.secretWordPublic.join(''));
+// console.log(gameCode.livesLeft);
+// gameCode.updateDOM();
