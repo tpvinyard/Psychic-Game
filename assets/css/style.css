@@ -16,7 +16,19 @@ body {
 }
 
 #mainSection {
-    margin: 5% auto;
+    margin: 3% auto;
+}
+
+#leftColumn {
+    border: 5px dashed white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#rightColumn {
+    border: 5px dashed white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 h4, h3 {
@@ -25,4 +37,14 @@ h4, h3 {
 
 span {
     color: white;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    color: white;
+    font-size:small;
+    text-align:center;
+    padding: 20px;
 }
