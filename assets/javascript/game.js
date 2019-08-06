@@ -1,4 +1,4 @@
-const wordsToGuessFrom = ['sarlacc', 'wookie'];
+const wordsToGuessFrom = ['sarlacc', 'ewok', 'amidala', 'sith', 'rathtar', 'skywalker', 'chewbacca', 'anikan', 'tatooine', 'jakku', 'lightsaber', 'obiwan', 'gungan', 'millennium', 'jedi', 'porg', 'sandcrawler','imperial'];
 
 const gameCode = {
     wins: 0,
@@ -26,9 +26,20 @@ const gameCode = {
                     this.secretWordPublic[i] = char;
                 }
             }
+        } else if (this.lettersGuessedWrong.includes(char)) {
+            console.log('you already guessed that letter');
         } else {
             this.lettersGuessedWrong.push(char);
             this.livesLeft--;
+        }
+    },
+
+    result: function() {
+        if (this.secretWordPublic.join('')==this.currentWord[0]){
+            wins++;
+            document.querySelector('#resultText').textContent = 'winner';
+        } else if (this.livesLeft===0) {
+            document.querySelector('#resultText').textContent = 'loser';
         }
     },
 
@@ -46,10 +57,12 @@ const gameCode = {
 }
 
 gameCode.getWordToGuess();
+gameCode.updateDOM();
 
 document.onkeyup = function(e) {
     const userSelection = e.key.toLowerCase();
     gameCode.guessLetter(userSelection);
+    gameCode.result();
     gameCode.updateDOM();
 }
 
