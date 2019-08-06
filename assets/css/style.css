@@ -1,12 +1,25 @@
 body {
-    background-color: black;
+    background-image: url("./../images/stars.jpg");
 }
 
 #title-logo {
     width: 40%;
+    position: relative;
 }
 
-h3 {
+#titleText {
+    font-family: 'Geostar Fill', cursive;
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 100%;
+}
+
+#mainSection {
+    margin: 5% auto;
+}
+
+h4, h3 {
     color: white;
 }
 

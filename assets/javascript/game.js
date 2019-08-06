@@ -1,4 +1,5 @@
 const wordsToGuessFrom = ['sarlacc', 'ewok', 'amidala', 'sith', 'rathtar', 'skywalker', 'chewbacca', 'anikan', 'tatooine', 'jakku', 'lightsaber', 'obiwan', 'gungan', 'millennium', 'jedi', 'porg', 'sandcrawler','imperial'];
+const facts = []
 
 const gameCode = {
     resetCondition: false,
@@ -7,14 +8,16 @@ const gameCode = {
     currentWord: [],
     secretWordPublic: [],
     lettersGuessedWrong: [],
-    facts: [],
+    factOfCurrentWord: [],
 
     getRandomNumber: function(n) {
         return Math.floor(Math.random() * n);
     },
 
     getWordToGuess: function() {
-        this.currentWord.push(wordsToGuessFrom[this.getRandomNumber(wordsToGuessFrom.length)]);
+        const n = this.getRandomNumber(wordsToGuessFrom.length);
+        this.currentWord.push(wordsToGuessFrom[n]);
+        this.factOfCurrentWord.push(wordsToGuessFrom[n]);
         for (let i = 0; i < this.currentWord[0].length; i++) {
             this.secretWordPublic.push('-');
         }
