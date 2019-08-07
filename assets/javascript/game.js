@@ -1,7 +1,6 @@
-const wordsToGuessFrom = ['sarlacc', 'ewok', 'amidala', 'sith', 'rathtar', 'skywalker', 'chewbacca', 'anikan', 'tatooine', 'jakku', 'lightsaber', 'obiwan', 'gungan', 'millennium', 'jedi', 'porg', 'sandcrawler','imperial'];
+const wordsToGuessFrom = ['sarlacc', 'ewok', 'sith', 'rathtar', 'skywalker', 'chewbacca', 'anikan', 'tatooine', 'jakku', 'lightsaber', 'obiwan', 'gungan', 'millennium', 'jedi', 'porg', 'imperial'];
 const facts = ['"In its belly, you will find a new definition of pain and suffering as you are slowly digested over a thousand years." ―C-3PO translating for Jabba the Hutt',
  'Ewoks were most notable for helping the Rebel Alliance defeat the forces of the Galactic Empire at the Battle of Endor. How did they defeat imperial forces with stone-age level technology? They just did. That\'s all that matters.',
- 'Padme Amidala was a senator who represented the people of Naboo during the final years of the Galactic Republic. Her life and secret marriage to Anikan Skywalker undoubtedly shaped the galaxy for generations after her death.',
  '',
  '',
  '',
@@ -33,8 +32,7 @@ const gameCode = {
     },
 
     getWordToGuess: function() {
- //       const n = this.getRandomNumber(wordsToGuessFrom.length);
-        n = 1;
+        const n = this.getRandomNumber(wordsToGuessFrom.length);
         this.currentWord.push(wordsToGuessFrom[n]);
         this.factOfCurrentWord.push(facts[n]);
         for (let i = 0; i < this.currentWord[0].length; i++) {
