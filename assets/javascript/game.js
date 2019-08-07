@@ -16,7 +16,11 @@ const facts = ['"In its belly, you will find a new definition of pain and suffer
  '',
  '',
  ''
-]
+];
+
+const songs = [];
+// const audioLoss = new Audio(src='assets/images/The-Imerial-March.mp3');
+// const audioWin = new Audio('assets/')
 
 const gameCode = {
     resetCondition: false,
@@ -61,9 +65,14 @@ const gameCode = {
             document.querySelector('#resultTitleText').textContent = 'The Force is strong with this one.';
             document.querySelector('#resultImage').innerHTML = "<img class='img-fluid' src='assets/images/" + this.currentWord[0] + ".gif'>";
             document.querySelector('#resultText').textContent = this.factOfCurrentWord[0];
+            document.querySelector('#resultSound').textContent = "Now Playing: 'The Throne Room' by John Williams";
             this.resetCondition = true;
         } else if (this.livesLeft===0) {
-            document.querySelector('#resultTitleText').textContent = 'loser';
+            document.querySelector('#resultTitleText').textContent = 'The Emperor will show you the true nature of the Force. He is your Master now.';
+            document.querySelector('#resultImage').innerHTML = "<img class='img-fluid' src='assets/images/palpatine.gif'>";
+            document.querySelector('#resultSound').textContent = "Now Playing: 'The Imperial March' by John Williams";
+            const audioLoss = new Audio('assets/images/The-Imerial-March.mp3');
+            audioLoss.play();
             this.resetCondition = true;
         }
     },
@@ -73,6 +82,10 @@ const gameCode = {
         this.currentWord.length = 0;
         this.secretWordPublic.length = 0;
         this.lettersGuessedWrong.length = 0;
+        document.querySelector('#resultTitleText').textContent = '';
+        document.querySelector('#resultImage').innerHTML = '';
+        document.querySelector('#resultText').textContent = '';
+        document.querySelector('#resultSound').innerHTML = '';
         this.getWordToGuess();
         this.updateDOM();
         this.resetCondition = false;
