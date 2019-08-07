@@ -66,13 +66,15 @@ const gameCode = {
             document.querySelector('#resultImage').innerHTML = "<img class='img-fluid' src='assets/images/" + this.currentWord[0] + ".gif'>";
             document.querySelector('#resultText').textContent = this.factOfCurrentWord[0];
             document.querySelector('#resultSound').textContent = "Now Playing: 'The Throne Room' by John Williams";
+            document.querySelector('#throneSound').play();
             this.resetCondition = true;
         } else if (this.livesLeft===0) {
             document.querySelector('#resultTitleText').textContent = 'The Emperor will show you the true nature of the Force. He is your Master now.';
             document.querySelector('#resultImage').innerHTML = "<img class='img-fluid' src='assets/images/palpatine.gif'>";
             document.querySelector('#resultSound').textContent = "Now Playing: 'The Imperial March' by John Williams";
-            const audioLoss = new Audio('assets/images/The-Imerial-March.mp3');
-            audioLoss.play();
+            // const audioLoss = new Audio('assets/images/The-Imerial-March.mp3');
+            // audioLoss.play();
+            document.querySelector('#imperialSound').play();
             this.resetCondition = true;
         }
     },
@@ -86,6 +88,8 @@ const gameCode = {
         document.querySelector('#resultImage').innerHTML = '';
         document.querySelector('#resultText').textContent = '';
         document.querySelector('#resultSound').innerHTML = '';
+        document.querySelector('#imperialSound').pause();
+        document.querySelector('#throneSound').pause();
         this.getWordToGuess();
         this.updateDOM();
         this.resetCondition = false;
