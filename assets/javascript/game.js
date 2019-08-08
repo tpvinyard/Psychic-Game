@@ -78,7 +78,7 @@ const gameCode = {
 
     // reset the DOM and all arrays so that the game can be played again
     resetGame: function() {
-        this.livesLeft = 15;
+        this.livesLeft = 7;
         this.currentWord.length = 0;
         this.secretWordPublic.length = 0;
         this.lettersGuessedWrong.length = 0;
@@ -121,8 +121,12 @@ document.onkeyup = function(e) {
     if (gameCode.resetCondition) {
         gameCode.resetGame();
     }
-    const userSelection = e.key.toLowerCase();
-    gameCode.guessLetter(userSelection);
-    gameCode.result();
-    gameCode.updateDOM();
+    if (e.which <= 90 && e.which >= 65) {
+        const userSelection = e.key.toLowerCase();
+        gameCode.guessLetter(userSelection);
+        gameCode.result();
+        gameCode.updateDOM();
+    }
 }
+
+// readme
