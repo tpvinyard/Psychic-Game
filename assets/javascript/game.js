@@ -20,7 +20,7 @@ const facts = ['"In its belly, you will find a new definition of pain and suffer
 const gameCode = {
     resetCondition: false,
     wins: 0,
-    livesLeft: 15,
+    livesLeft: 7,
     currentWord: [],
     secretWordPublic: [],
     lettersGuessedWrong: [],
@@ -128,5 +128,3 @@ document.onkeyup = function(e) {
         gameCode.updateDOM();
     }
 }
-
-// readme
