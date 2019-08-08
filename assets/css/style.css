@@ -9,6 +9,7 @@ body {
 
 #titleText {
     font-family: 'Geostar Fill', cursive;
+    font-size: 18px;
     position: absolute;
     top: 75%;
     left: 0;
@@ -31,6 +32,15 @@ body {
     padding-bottom: 10px;
 }
 
+#resultTitleText {
+    font-family: 'Geostar Fill', cursive;
+}
+
+#resultSound {
+    font-size: 10px;
+    font-style: italic;
+}
+
 h4, h3 {
     color: white;
 }
@@ -42,9 +52,27 @@ span {
 .footer {
     bottom: 0;
     width: 100%;
-    position: fixed;
     color: white;
     font-size:small;
     text-align:center;
     padding: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    
+    h1,h2,h3 {
+        font-size: 1.4em;
+    }
+    
+    h4,h5,h6{
+        font-size: 1em;
+    }
+
+    #titleText{
+        font-size: 90%;
+    }
+
+    #leftColumn {
+        margin-bottom: 10px;
+    }
 }
