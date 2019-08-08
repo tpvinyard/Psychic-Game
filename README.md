@@ -1,5 +1,7 @@
 ## Use the Force
 
+Play here: https://tpvinyard.github.io/Word-Guess-Game
+
 *Use the Force* is a hangman style game with a Star Wars flare.
 
 ### Instructions
